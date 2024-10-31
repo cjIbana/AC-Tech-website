@@ -1,0 +1,53 @@
+﻿@model List<CuisineDataModel>
+
+@{
+    ViewData["Title"] = "Cuisine";
+}
+
+<div class="container my-3 about-us-container">
+
+    @if (Model == null)
+    {
+        <h2 class="text-center mb-4">No Records Found!!!</h2>
+    }
+    else
+    {
+
+        @foreach (var item in Model)
+        {
+            if (item.Position == "left")
+            {
+                <div class="content-container row g-0 justify-content-center">
+                    <div class="col-md-6">
+                        <div class="image-container slide-in-left">
+                            <img src="@Url.Content(item.Image)" alt="@item.RecipeTitle" class="img-fluid w-100">
+                        </div>
+                        <div class="description slide-in-right text-center">
+                            <p class="name mb-1">@item.RecipeTitle</p>
+                            <p class="text-justify">@item.Description</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+            }
+            else if (item.Position == "right")
+            {
+
+                <div class="content-container row g-0 justify-content-center">
+                    <div class="col-md-6">
+                        <div class="image-container slide-in-right">
+                            <img src="@Url.Content(item.Image)" alt="@item.RecipeTitle" class="img-fluid w-100">
+                        </div>
+                        <div class="description slide-in-right text-center">
+                            <p class="name mb-1">@item.RecipeTitle</p>
+                            <p class="text-justify">@item.Description</p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            }
+        }
+    }
+
+</div>
