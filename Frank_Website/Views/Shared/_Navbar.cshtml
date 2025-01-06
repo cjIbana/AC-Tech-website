@@ -2,7 +2,7 @@
     <div class="container mw-100">
         <div class="navbar-brand">
             <a asp-controller="Home" asp-action="Index">
-                <img src="~/assets/shared/logo.png" alt="Frank Website Logo" class="img-fluid website-logo" style="width: 200px;"> <!-- Adjust the width as needed -->
+                <img src="~/assets/shared/LogoFinal.png" alt="Ac Tech Logo" class="img-fluid website-logo" style="width: 300px;"> <!-- Adjust the width as needed -->
             </a>
         </div>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,33 +22,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Cuisine" asp-action="CuisineMenu">
-                        CUISINE
+                    <a class="nav-link" asp-controller="Services" asp-action="Services">
+                        SERVICES
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-haspopup="true" data-bs-toggle="dropdown" aria-expanded="false">
-                        MENUS
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Projects" asp-action="ProjectDetails">
+                        PROJECTS
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" asp-controller="Cuisine" asp-action="MenuLunch">
-                               Lunch
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" asp-controller="Cuisine" asp-action="MenuDinner">
-                            Dinner Menu
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" asp-controller="Cuisine" asp-action="WineList">
-                            Wine List
-                        </a>
-                    </div>
                 </li>
-                <a class="nav-link" asp-controller="Reservation" asp-action="ReservationDetails">
-                    Reservations
-                </a>
-                <a class="nav-link" asp-controller="Reservation" asp-action="PrivateDining">
-                    Private Dining
+
+                <a class="nav-link" asp-controller="ContactUs" asp-action="Contact">
+                    CONTACT US
                 </a>
             </ul>
         </div>

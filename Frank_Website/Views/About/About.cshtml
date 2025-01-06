@@ -6,52 +6,335 @@
 
 
 <div class="container my-3 about-us-container">
+    <div class="content-container row g-0">
+        <div class="col-md-6">
+            <div class="image-container slide-in-left">
+                <img src="~/assets/about_images/vision_mission.png" alt="" class="img-fluid w-90">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="description slide-in-right">
+                <p class="name">VISION</p>
+                <p class="position"></p>
+                <p>
+                    Our vision is to be part of our country's nation building to uplift the lives of Filipinos for the next generation.
+                </p>
 
-    @if(Model == null)
-    {
-        <h2 class="text-center mb-4">No Records Found!!!</h2>
-    }
-    else
-    {
+                <hr />
+                <p class="name">MISSION</p>
+                <p class="position"></p>
+                <p>
+                    We help project, owners, developers, and companies meet their electrical requirements with professionalism, excellent workmanship, and with value added services.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr />
 
-        @foreach (var item in Model)
-        {
-            if (item.Position == "left")
-            {
-                <div class="content-container row g-0">
-                    <div class="col-md-6">
-                        <div class="image-container slide-in-left">
-                            <img src="@Url.Content(item.Image)" alt="@item.Name" class="img-fluid w-90">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="description slide-in-right">
-                            <p class="name">@item.Name</p>
-                            <p class="position">@item.JobTitle</p>
-                            <p>@item.Description</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="content-container row g-0">
+        <div class="col-md-12">
+            <div class="description slide-in-right">
+                <p class="name text-center">OUR PURPOSE</p>
+                <p class="position"></p>
+                <p class="fw-bold">
+                    AC Technical Services, Inc. was conceived to serve  the needs of  commercial and utility firms for a reliable contractor who can best attend to their requirements.
+                    By providing highly skilled team of engineers - electrical, civil and/or mechanical with extensive exposure in the areas of installation, project management, electrical design, fabrication of electrical equipment, start-up and servicing.
+                    By providing technical expertise in the installation, commissioning and after sales of all its products.
+                    By providing known and quality products and engineering services at a reasonable price.
+                    By providing in-depth technical assistance in the choice of alternative electrical equipment to suit their specific requirements.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container row g-0">
+        <div class="col-md-12">
+            <div class="description slide-in-left">
+                <p class="name text-center">
+                    OUR DIFFERENCES
+                </p>
+                <p class="position">
+                    EXPERT
+                </p>
+                <p class="fw-bold text-center">
+                    We have a background of over 40 years of providing excellent electrical contracting engineering services throughout the Philippines. Our capability keeps getting better through the years!
+                </p>
+
+                <p class="position text-center">
+                    RELIABLE
+                </p>
+                <p class="fw-bold text-center">
+                    We provide excellent services that are not only exceptional, but outright reliable.  We are staffed with a skillful workforce and we guarantee our client’s satisfaction!
+                </p>
+
+                <p class="position">
+                    VALUE
+                </p>
+                <p class="fw-bold text-center">
+                    We have the expertise to meet your needs and add value to our services.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="content-container row g-0">
+        <div class="col-md-12">
+            <div class="description slide-in-right">
+                <p class="name text-center">
+                   COMPANY MILESTONE
+                </p>
+                <p class="position">
+                    1971
+                </p>
+                <p class="fw-bold text-center">
+                    AC Engineering Enterprises, a single proprietorship principally engaged in electrical contracting services was established by Engr. Alfredo R. Cacanando who also became its president and general manager with the full support of his wife Ms. Clarita I. Cacanando in all aspect of HR / Administration function, Purchasing, Logistics and other duties and now as a Corporate Secretary of the company.
+                </p>
+
+                <p class="position text-center">
+                    1977
+                </p>
+                <p class="fw-bold text-center">
+                    On August 11, 1977, AC Technical Services Inc. has been duly organized and existed under the laws of Republic of the Philippines. It was incorporated and registered with the Securities and Exchange Commission under Registry No. 75039.
+                </p>
+
+                <p class="position">
+                    1978
+                </p>
+                <p class="fw-bold text-center">
+                    On February 14, 1978, AC Technical Services, Inc. is principally classified under Category "A" as specialty electrical contractor with other classification as general engineering contractor, duly accredited by the Philippine Contractor's Accreditation Board (PCAB) with Contractor License No. 3926 under provisions of Republic Act No. 4566.
+                </p>
+
+                <p class="position">
+                    1981
+                </p>
+                <p class="fw-bold text-center">
+                    On January 1981, the construction activities of AC Technical Services, Inc. is supported by a fabrication and assembly shop has been built and established at R.M. Tiosejo Industrial Subdivision along Tunasan, Muntinlupa, Metro Manila. The shop serves other contractors, customers, electrical supply houses, industrial plants and utility comapnies.
+                </p>
+
+                <p class="position">
+                    1983
+                </p>
+                <p class="fw-bold text-center">
+                    Early part of 1983, AC Technical Services Inc. have concentrated its electrical construction services and trading activities to serve construction requirements at U.S. military facilities in Clark Air Base, Subic Naval Base, Cubi Air Station, John Hay Air Station in Baguio City and Wallace Air Station in San Fernando, La Union.
+                </p>
+
+                <p class="position">
+                    1991
+                </p>
+                <p class="fw-bold text-center">
+                    After the Mt. Pinatubo eruption in June 1991, the US military bases located in that area was greatly damaged by "lahar" which forced the US military bases to abandon  their military facilities. On the same year, the military agreement between the Philippine and United States was completed which necessitated the company to engage in projects outside the US bases.
+                </p>
+
+                <p class="position">
+                    2016    
+                </p>
+                <p class="fw-bold text-center">
+                    On 2016, the Chairman, Engr. Alfredo R. Cacanando appointed Mr. Alfredo I. Cacanando, Jr. to be the next President of AC Technical Services, Inc.
+                </p>
+
+                <p class="position">
+                    2022
+                </p>
+                <p class="fw-bold text-center">
+                    At this year, AC Technical Services, Inc. reach the highest gross income after more than 4 decades in the business amounting of 1.5 Billion pesos.
+                </p>
+
                 <hr />
-            }
-            else if (item.Position == "right")
-            {
-                <div class="content-container row g-0">
-                    <div class="col-md-6">
-                        <div class="description slide-in-right">
-                            <p class="name">@item.Name</p>
-                            <p class="position">@item.JobTitle</p>
-                            <p>@item.Description</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="image-container slide-in-left">
-                            <img src="@Url.Content(item.Image)" alt="@item.Name" class="img-fluid w-90">
-                        </div>
-                    </div>
+                <p class="fw-bold text-center">
+                    AC Technical Services, Inc. having established itself as a technically qualified and reliable electrical contractor in the performance of its numerous contracts. As a result, it has expanded its engineering staff to include mechanical and civil engineers as well as architects.
+
+                    AC Technical Services, Inc. have established very good business relations with manufacturers as well as with their export distributors or representatives. It has been designated authorized representatives in the Philippines and extended credit facilities by the following exporters and manufacturers;
+
+                    ATECOM CORPORATION - Whitestone, New York
+                    OLSUN ELECTRICS CORPORATION - Richmond, Illinois
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="content-container row g-0">
+        <div class="col-md-12">
+            <div class="description slide-in-left">
+                <p class="name text-center">
+                    STOCKHOLDERS
+                </p>
+                <p class="position text-uppercase">
+                    Chairman of the Board and CEO
+                </p>
+                <p class="fw-bold text-center">
+                    ENGR. ALFREDO R. CACANANDO
+                </p>
+
+                <p class="position text-center text-uppercase">
+                    President
+                </p>
+                <p class="fw-bold text-center text-uppercase">
+                    ALFREDO I. CACANANDO, JR.
+                </p>
+
+                <p class="position text-uppercase">
+                    Treasurer and Corporate Secretary
+                </p>
+                <p class="fw-bold text-center">
+                    CLARITA I. CACANANDO
+                </p>
+
+                <p class="position text-uppercase">
+                    VP Finance
+                </p>
+                <p class="fw-bold text-center">
+                    CARMELA C. BARCELONA, CPA
+                </p>
+
+                <p class="fw-bold text-center">
+                    EUGENIA Q. CACANANDO
+                </p>
+
+                <p class="fw-bold text-center">
+                    MA. SOCORRO H. LOPEZ
+                </p>
+
+                <p class="fw-bold text-center">
+                    JUDITH H. LOPEZ
+                </p>
+
+                <p class="fw-bold text-center">
+                    SUSANA C. DEJAN, CPA
+                </p>
+
+                <p class="fw-bold text-center">
+                    ENGR. PEDRO L. CUEVAS, P.E.E.
+                </p>
+
+                <p class="fw-bold text-center">
+                    ENGR. JESUS P. VILLANUEVA
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="content-container row g-0">
+        <div class="col-md-12">
+            <div class="description slide-in-right">
+                <p class="name text-center">
+                    CORPORATE OFFICERS
+                </p>
+                <p class="position text-uppercase">
+                    Chairman of the Board and CEO
+                </p>
+                <p class="fw-bold text-center">
+                    ENGR. ALFREDO R. CACANANDO
+                </p>
+
+                <p class="position text-center text-uppercase">
+                    President
+                </p>
+                <p class="fw-bold text-center text-uppercase">
+                    ALFREDO I. CACANANDO, JR.
+                </p>
+
+                <p class="position text-uppercase">
+                    Treasurer and Corporate Secretary
+                </p>
+                <p class="fw-bold text-center">
+                    CLARITA I. CACANANDO
+                </p>
+
+                <p class="position text-uppercase">
+                    VP Finance
+                </p>
+                <p class="fw-bold text-center">
+                    CARMELA C. BARCELONA, CPA
+                </p>
+
+                <p class="position text-uppercase">
+                    Chief Finance Officer
+                </p>
+                <p class="fw-bold text-center">
+                    SUSANA C. DEJAN, CPA
+                </p>
+
+                <p class="position text-uppercase">
+                    VP Sales & Operations
+                </p>
+                <p class="fw-bold text-center">
+                    ENGR. JAIME J. ELEAZAR
+                </p>
+
+                <p class="position text-uppercase">
+                    VP Engineering
+                </p>
+                <p class="fw-bold text-center">
+                    ENGR. ALLAN N. PUEBLA
+                </p>
+
+                <p class="position text-uppercase">
+                    Electrical Consultant
+                </p>
+                <p class="fw-bold text-center">
+                    ENGR. PEDRO L. CUEVAS
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container row g-0">
+        <div class="col-md-12">
+            <div class="description slide-in-right" style="text-align:center !important">
+                <p class="name">ACREDITED BY</p>
+            </div>
+
+            <div class="col-md-12">
+                <div class="image-container slide-in-left">
+                    <img src="~/assets/about_images/dole.jpg" alt="" class="img-fluid w-90">
                 </div>
-                <hr />
-            }
-        }
-    }
+            </div>
+
+            <hr />
+            <div class="col-md-12">
+                <div class="image-container slide-in-left">
+                    <img src="~/assets/about_images/brad.jpg" alt="" class="img-fluid w-90">
+                </div>
+            </div>
+
+            <hr />
+            <div class="col-md-12">
+                <div class="image-container slide-in-left">
+                    <img src="~/assets/about_images/green.jpg" alt="" class="img-fluid w-90">
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <div class="image-container slide-in-left">
+                    <img src="~/assets/about_images/meralco.jpg" alt="" class="img-fluid w-90">
+                </div>
+            </div>
+            <hr />
+
+            <div class="col-md-12">
+                <div class="image-container slide-in-left">
+                    <img src="~/assets/about_images/contractors.jpg" alt="" class="img-fluid w-90">
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <div class="image-container slide-in-left">
+                    <img src="~/assets/about_images/philgeps.jpg" alt="" class="img-fluid w-90">
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <div class="image-container slide-in-left">
+                    <img src="~/assets/about_images/PCA.jpg" alt="" class="img-fluid w-90">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

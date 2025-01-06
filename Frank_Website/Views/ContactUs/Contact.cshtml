@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="font-weight-bold mb-4">Welcome to AC Technical Services!</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="content-container row g-0">
+            <div class="col-md-6 text-center">
+                <div class="description slide-in-left text-center">
+                    <h2 class="text-center font-weight-bold mb-4">
+                        HEAD OFFICE
+                    </h2>
+                    <p class="name text-center fs-5">
+                        AC Building, 2671 Agutaya Street, Brgy. Pinagkaisahan,
+                        Makati City, Philippines
+                    </p>
+                    <hr />
+
+                    <h2 class="text-center font-weight-bold mb-4">
+                        FABRICATION & WAREHOUSE
+
+                    </h2>
+                    <p class="name text-center fs-5">
+                        R.M. Tiosejo Industrial Subdivision
+                        KM. 30, Tunasan, Muntinlupa City
+
+                    </p>
+
+                    <hr />
+                    <h2 class="text-center font-weight-bold">
+                       Email
+
+                    </h2>
+                    <p class="name text-center fs-5">
+                        info@actech.com.ph
+                    </p>
+
+                    <hr />
+                    <h2 class="text-center font-weight-bold">
+                        Number
+
+                    </h2>
+                    <p class="name text-center fs-5">
+                        (02)8881-4563; 8881-4569
+                        (02)8881-4582; 8881-4549
+                        (02)8861 - 9029; 8861-9030
+
+                        <br />
+                        FAX NO.: (02)8881-4544
+                        <br />
+                        FAX NO.: (02)8861-3758
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="image-container slide-in-right">
+                    <img src="~/assets/ContactUs_Images/company_building.jpg" alt="contactus" class="img-fluid w-90">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5 slide-in-left">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center font-weight-bold mb-4">Find Us Here</h1>
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxtTPdJqQMOwjsbKBO3adqPGzBR1MgC5g"></script>
+
+<script>
+
+    function initMap() {
+        var restaurantLocation = { lat: 14.55928559388127, lng: 121.04174899664065 };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: restaurantLocation
+        });
+
+        var marker = new google.maps.Marker({
+            position: restaurantLocation,
+            map: map,
+            title: 'Our Restaurant!'
+        });
+
+        var infoWindow = new google.maps.InfoWindow({
+            content: '<h4>Welcome to Ac Technical Services!</h4><p>We are excited to serve you.</p>'
+        });
+
+        infoWindow.open(map, marker);
+    }
+
+    window.onload = initMap;
+</script>
