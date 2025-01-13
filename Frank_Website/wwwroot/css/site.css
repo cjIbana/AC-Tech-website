@@ -841,3 +841,27 @@ milestone-container p {
 #closeButton {
     background-color: #e53e3e !important;
 }
+
+
+.contact-us-btn {
+    transition: all 0.3s;
+    background-color: #192230 !important;
+    outline: #063501 !important;
+    color: white;
+}
+
+    .contact-us-btn:hover {
+        background-color: #03ae57 !important;
+        color: white;
+        transform: translateY(-5px);
+    }
+
+.modal-header {
+    background-color: #03ae57 !important;
+    color:white;
+    align-content:center;
+}
+
+.modal-content{
+    text-align:center;
+}
