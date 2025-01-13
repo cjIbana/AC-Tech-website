@@ -12,10 +12,16 @@ namespace Frank_Website.Controllers
             _dataRepository = dataRepository;
         }
 
-        public async Task<IActionResult> Services()
+        public IActionResult Services()
         {
-            var data = await _dataRepository.GetCuisineDataAysync();
-            return View(data);
+            string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "assets", "Products_Images");
+
+            string[] imageFiles = Directory.GetFiles(folderPath)
+                                    .Select(file => Path.GetFileName(file)) // Extract file names only
+                                    .ToArray();
+
+            // Pass the image file names to the view
+            return View(imageFiles);
         }
     }
 }

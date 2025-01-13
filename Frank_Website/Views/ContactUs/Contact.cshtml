@@ -5,7 +5,7 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1 class="font-weight-bold mb-4">Welcome to AC Technical Services!</h1>
+            <h1 class="font-weight-bold mb-4 animated-drop">Welcome to AC Technical Services!</h1>
         </div>
     </div>
 </div>
@@ -18,7 +18,7 @@
                     <h2 class="text-center font-weight-bold mb-4">
                         HEAD OFFICE
                     </h2>
-                    <p class="name text-center fs-5">
+                    <p class="name text-center fs-5 addresses" onclick="focusOnMap('headOffice')">
                         AC Building, 2671 Agutaya Street, Brgy. Pinagkaisahan,
                         Makati City, Philippines
                     </p>
@@ -26,18 +26,15 @@
 
                     <h2 class="text-center font-weight-bold mb-4">
                         FABRICATION & WAREHOUSE
-
                     </h2>
-                    <p class="name text-center fs-5">
+                    <p class="name text-center fs-5 addresses" onclick="focusOnMap('warehouse')">
                         R.M. Tiosejo Industrial Subdivision
                         KM. 30, Tunasan, Muntinlupa City
-
                     </p>
 
                     <hr />
                     <h2 class="text-center font-weight-bold">
-                       Email
-
+                        Email
                     </h2>
                     <p class="name text-center fs-5">
                         info@actech.com.ph
@@ -46,24 +43,20 @@
                     <hr />
                     <h2 class="text-center font-weight-bold">
                         Number
-
                     </h2>
                     <p class="name text-center fs-5">
                         (02)8881-4563; 8881-4569
+                        <br />
                         (02)8881-4582; 8881-4549
-                        (02)8861 - 9029; 8861-9030
-
                         <br />
-                        FAX NO.: (02)8881-4544
-                        <br />
-                        FAX NO.: (02)8861-3758
+                        (02)8861-9029; 8861-9030
                     </p>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="image-container slide-in-right">
-                    <img src="~/assets/ContactUs_Images/company_building.jpg" alt="contactus" class="img-fluid w-90">
+                    <img src="~/assets/ContactUs_Images/company_building-modified.png" alt="contactus" class="img-fluid w-100">
                 </div>
             </div>
         </div>
@@ -74,7 +67,8 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="text-center font-weight-bold mb-4">Find Us Here</h1>
-            <div id="map"></div>
+            <!-- Make the map container responsive and set a height -->
+            <div id="map" class="w-100" style="height: 400px;"></div>
         </div>
     </div>
 </div>
@@ -82,26 +76,37 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxtTPdJqQMOwjsbKBO3adqPGzBR1MgC5g"></script>
 
 <script>
+    let map, marker;
 
     function initMap() {
-        var restaurantLocation = { lat: 14.55928559388127, lng: 121.04174899664065 };
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            center: restaurantLocation
+        const defaultLocation = { lat: 14.55928559388127, lng: 121.04174899664065 }; // Head Office
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 18,
+            center: defaultLocation
         });
 
-        var marker = new google.maps.Marker({
-            position: restaurantLocation,
+        marker = new google.maps.Marker({
+            position: defaultLocation,
             map: map,
-            title: 'Our Restaurant!'
+            title: 'Head Office'
         });
+    }
 
-        var infoWindow = new google.maps.InfoWindow({
-            content: '<h4>Welcome to Ac Technical Services!</h4><p>We are excited to serve you.</p>'
-        });
+    function focusOnMap(location) {
+        const locations = {
+            headOffice: { lat: 14.559148259709007, lng: 121.04174120938498 },
+            warehouse: { lat: 14.373201480285685, lng: 121.04959073801818 }
+        };
 
-        infoWindow.open(map, marker);
+        if (locations[location]) {
+            const newLocation = locations[location];
+            map.setCenter(newLocation);
+            marker.setPosition(newLocation);
+            marker.setTitle(location === 'headOffice' ? 'Head Office' : 'Fabrication & Warehouse');
+
+            // Scroll the page to the map container
+            document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
     window.onload = initMap;

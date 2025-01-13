@@ -1,10 +1,11 @@
-﻿@{
+﻿@model string[]
+
+@{
     ViewData["Title"] = "Services";
 }
 
 <div class="container my-3 about-us-container">
-
-    <div class="content-container row g-0 justify-content-center">
+    <div class="content-container services-container row g-0 justify-content-center">
         <div class="col-md-6">
             <div class="image-container slide-in-left">
                 <img src="~/assets/services_images/electrical_image.jpg" alt="" class="img-fluid w-100">
@@ -13,29 +14,26 @@
 
         <div class="col-md-6">
             <div class="slide-in-left" style="padding-left:10px;">
-                <p class="name text-uppercase">
+                <h1 class="name text-uppercase">
                     Electrical Engineering Services
-                </p>
-                <p class="position"></p>
+                </h1>
                 <p>Installation of electrical system - Industrial/commercial/high rise buildings.</p>
                 <p>Installation of distribution facilities - overhead and underground.</p>
                 <p>Substation and switchyard packages.</p>
                 <p>System Design Review.</p>
                 <p>Servicing/Rehabilitation of Electrical/Electronic Equipment.</p>
-                <p>Substation and switchyard packages.</p>
-
             </div>
         </div>
     </div>
 
     <hr />
 
-    <div class="content-container row g-0 justify-content-center">
+    <div class="content-container services-container row g-0 justify-content-center">
         <div class="col-md-6">
             <div class="slide-in-right">
-                <p class="name text-uppercase">
+                <h1 class="name text-uppercase">
                     Fabricated and Assembled Equipment
-                </p>
+                </h1>
                 <p>Switchgears up to 35KV</p>
                 <p>Motor Control Centers/Control Panel</p>
                 <p>Distribution/Lighting Panels</p>
@@ -49,14 +47,13 @@
 
         <div class="col-md-6">
             <div class="image-container slide-in-right">
-                <img src="~/assets/services_images/gears.jpg" alt="" class="img-fluid w-100">
+                <img src="~/assets/services_images/electrical_image_2.jpg" alt="" class="img-fluid w-100">
             </div>
         </div>
     </div>
 
     <hr />
-
-    <div class="content-container row g-0 justify-content-center">
+    <div class="content-container services-container row g-0 justify-content-center">
         <div class="col-md-6">
             <div class="image-container slide-in-left">
                 <img src="~/assets/services_images/electrical_image_3.jpg" alt="" class="img-fluid w-100">
@@ -65,9 +62,9 @@
 
         <div class="col-md-6">
             <div class="slide-in-left" style="padding-left:10px;">
-                <p class="name text-uppercase">
+                <h1 class="name text-uppercase">
                     Trading and importer of equipment
-                </p>
+                </h1>
                 <p class="position"></p>
                 <p>Installation of electrical system - Industrial/commercial/high rise buildings.</p>
                 <p>Installation of distribution facilities - overhead and underground.</p>
@@ -79,4 +76,87 @@
             </div>
         </div>
     </div>
+    <hr />
+    <div class="content-container row g-0 justify-content-center">
+        <div class="col-md-12">
+            <h1 class="text-center text-uppercase name">OUR PRODUCTS</h1>
+            <br />
+            <div class="carousel-container">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                    <!-- auto-slide every 3 seconds -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="d-flex" id="carouselImages">
+                                @for (int i = 0; i < Model.Length; i++)
+                                {
+                                    <div class="carousel-image-container">
+                                        <img src="~/assets/products_images/@Model[i]" class="carousel-image" alt="Project @i"
+                                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                                             data-image="@Url.Content("~/assets/products_images/" + Model[i])"
+                                             data-index="@i">
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<!-- Modal for Image Carousel -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <img id="modalImage" src="" class="d-block w-100" alt="Project Image">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="prevButton">Previous</button>
+                <button type="button" class="btn btn-secondary" id="nextButton">Next</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeButton">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+    const modalImage = document.getElementById('modalImage');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const images = document.querySelectorAll('.carousel-image');
+    let currentIndex = 0;
+
+    // Set initial image and index on modal open
+    images.forEach((image, index) => {
+        image.addEventListener('click', function () {
+            currentIndex = index;  // Capture clicked image index
+            const imageUrl = this.getAttribute('data-image');
+            modalImage.src = imageUrl; // Update modal image source
+        });
+    });
+
+    // Show next image in modal
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length; // Cycle to next image
+        const nextImage = images[currentIndex];
+        modalImage.src = nextImage.getAttribute('data-image'); // Update modal image
+    });
+
+    // Show previous image in modal
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Cycle to previous image
+        const prevImage = images[currentIndex];
+        modalImage.src = prevImage.getAttribute('data-image'); // Update modal image
+    });
+
+    // Auto-slide carousel images every 2 seconds
+    let currentOffset = 0;
+    const imageWidth = document.querySelector('.carousel-image').offsetWidth + 15; // Account for gap
+    const totalImages = images.length;
+
+    setInterval(() => {
+        currentOffset = (currentOffset + imageWidth) % (imageWidth * totalImages);
+        document.getElementById('carouselImages').style.transform = `translateX(-${currentOffset}px)`;
+    }, 2000); // Slide every 2 seconds
+</script>

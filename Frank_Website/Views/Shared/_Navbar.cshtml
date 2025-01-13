@@ -1,14 +1,25 @@
 ﻿<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container mw-100">
+    <div class="container mw-100 d-flex align-items-center justify-content-between">
+        <!-- Logo Section -->
         <div class="navbar-brand">
             <a asp-controller="Home" asp-action="Index">
-                <img src="~/assets/shared/LogoFinal.png" alt="Ac Tech Logo" class="img-fluid website-logo" style="width: 300px;"> <!-- Adjust the width as needed -->
+                <img src="~/assets/shared/logo_2.png" alt="Ac Tech Logo" class="img-fluid website-logo"> <!-- Adjust the width as needed -->
+            </a>
+
+            <a asp-controller="Home" asp-action="Index" class="logo-text-link">
+                <div class="logo-text d-inline-block">
+                    <span class="ac-text">AC</span><span class="tech-text">TECH</span>
+                </div>
             </a>
         </div>
+
+        <!-- Navbar Toggle Button for Mobile -->
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="toggler-line top-line"></span>
             <span class="toggler-line bottom-line"></span>
         </button>
+
+        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -31,7 +42,6 @@
                         PROJECTS
                     </a>
                 </li>
-
                 <a class="nav-link" asp-controller="ContactUs" asp-action="Contact">
                     CONTACT US
                 </a>

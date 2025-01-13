@@ -5,13 +5,24 @@
 <div class="container-fluid p-0">
     <div class="banner-container position-relative">
         <img src="~/assets/homes_images/banner_image_background_2.jpg" alt="Banner Image" class="img-fluid w-100">
+
+        <!-- Logo Container (on top of the banner title) -->
+        <div class="logo-container position-absolute top-40 start-50 translate-middle-x text-center">
+            <img src="~/assets/shared/logo_2.png" alt="AC Technical Services Logo" class="logo img-fluid animated-drop">
+        </div>
+
+        <!-- Banner Text -->
         <div class="banner-text position-absolute top-50 start-50 translate-middle text-center text-white">
-            <h1 class="banner-title fade-in-left">
+          @*   <h1 class="banner-title fade-in-left responsive-title">
                 <span class="green-text">AC</span> TECHNICAL
                 SERVICES, INC.
+            </h1> *@
+            <h1 class="banner-title fade-in-left responsive-title">
+                AC TECHNICAL
+                SERVICES, INC.
             </h1>
-            <p class="banner-description fade-in-left">
-                Over 40+ years of incredible services!
+            <p class="banner-description fade-in-left responsive-description">
+                Over 47+ years of incredible services!
             </p>
             <a class="btn learn-more-btn slide-in-up" asp-controller="About" asp-action="About">
                 Learn More About Us >>
