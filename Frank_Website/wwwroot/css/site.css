@@ -574,11 +574,15 @@ hr{
     padding: 20px; /* Inner spacing within the card */
     margin: 10px; /* Add spacing between boxes */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    height: 330px;
+    overflow: hidden;
+    cursor:pointer;
 }
 
     .project-card:hover {
         transform: translateY(-20px); /* Slight lift effect */
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        cursor: pointer;
     }
 
 .image-container-projects {
@@ -658,13 +662,13 @@ hr{
 
 #modalImage {
     height: 600px;
-    background-color: black;
+    background-color: whitesmoke !important;
     object-fit: contain;
 }
 
 /* Logo container styling */
 .logo-container {
-    top: 9%; /* Adjust top position as needed */
+    top: 5%; /* Adjust top position as needed */
     left: 50%;
     transform: translateX(-50%);
     z-index: 10; /* Ensures the logo stays above the title */
@@ -709,7 +713,7 @@ hr{
 
 @media (max-width: 576px) {
     .logo-container {
-        top: 35%;
+        top: 30%;
     }
 
         .logo-container img {
@@ -864,4 +868,88 @@ milestone-container p {
 
 .modal-content{
     text-align:center;
+}
+
+.clickable-image:hover {
+    transform: translateY(-5px) !important;
+}
+
+.project-address, .project-name {
+    font-weight: bold !important;
+    text-decoration: none;
+    color: black;
+}
+
+    .project-address:hover{
+        color: black;
+    }
+
+    .project-name:hover {
+        color: black;
+    }
+
+#modalTitle {
+    color: #03ae57 !important;
+}
+
+.modal-dialog {
+    max-height: 90%; /* Ensures the modal does not exceed 90% of the screen height */
+}
+
+.modal-content {
+    height: 100%; /* Make the content stretch to the dialog's height */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.modal-body {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100vh - 200px); /* Limit the height of the body to prevent overflow */
+    padding: 15px;
+    background-color: #FBFBFB;
+    color: black;
+}
+
+#modalImage {
+    max-width: 60%;
+    box-shadow: 10px 5px 5px #BCCCDC !important;
+}
+
+.modal-backdrop.show {
+    backdrop-filter: blur(30px); /* High blur intensity */
+    background-color: rgba(0, 0, 0, 100); /* Slight dark overlay */
+}
+
+.modal-dialog {
+    max-height: 90%; /* Modal height */
+    margin: auto;
+}
+
+.modal-content {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners like Facebook */
+}
+
+.modal-body {
+    overflow-y: auto; /* Enable scroll if content is long */
+    max-height: calc(100vh - 200px); /* Prevent modal body from exceeding screen height */
+    padding: 15px;
+    background-color: #F8FAFC !important;
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 1rem); /* Ensures modal is fully centered */
+}
+
+.modal-content {
+    border-radius: 10px; /* Add rounded corners for a clean look */
+}
+
+.project-scope {
+    text-align: center;
+    font-size: 3.5em;
+    color: #03ae57;
 }
