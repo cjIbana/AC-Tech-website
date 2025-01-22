@@ -1,7 +1,7 @@
 ﻿@model string[]
 
 @{
-    ViewData["Title"] = "Services";
+    ViewData["Title"] = "Actech Services";
 }
 
 <div class="container my-3 about-us-container">
@@ -105,12 +105,11 @@
     </div>
     </div>
 
-<!-- Modal for Image Carousel -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
-            <div class="modal-body p-0">
-                <img id="modalImage" src="" class="d-block w-100" alt="Project Image">
+            <div class="modal-body p-0 text-center" style="background-color:#201d1d !important;">
+                <img id="modalImageServices" src="" class="img-fluid" alt="Project Image" style="max-width: 80%; height: auto;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="prevButton">Previous</button>
@@ -120,8 +119,9 @@
         </div>
     </div>
 </div>
+
 <script>
-    const modalImage = document.getElementById('modalImage');
+    const modalImage = document.getElementById('modalImageServices');
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
     const images = document.querySelectorAll('.carousel-image');
@@ -159,4 +159,16 @@
         currentOffset = (currentOffset + imageWidth) % (imageWidth * totalImages);
         document.getElementById('carouselImages').style.transform = `translateX(-${currentOffset}px)`;
     }, 2000); // Slide every 2 seconds
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("imageModal");
+
+        modal.addEventListener("show.bs.modal", () => {
+            modal.classList.add("bounce-down-in");
+        });
+
+        modal.addEventListener("hidden.bs.modal", () => {
+            modal.classList.remove("bounce-down-in");
+        });
+    });
 </script>

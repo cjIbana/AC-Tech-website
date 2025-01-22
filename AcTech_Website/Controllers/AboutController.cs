@@ -16,7 +16,7 @@ namespace Frank_Website.Controllers
             _dataRepository = dataRepository;
         }
 
-        public async Task<IActionResult> About()
+        public async Task<IActionResult> AboutAcTech()
         {
             var data = await _dataRepository.GetDataAsync();
             return View(data);

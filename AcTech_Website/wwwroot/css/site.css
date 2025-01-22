@@ -29,7 +29,7 @@ body {
 }
 
 .navbar {
-    padding: 0px 60px 0px 60px !important;
+    padding: 0px 40px 0px 40px !important;
     background-color: #192230 !important;
 }
 
@@ -580,7 +580,7 @@ hr{
 }
 
     .project-card:hover {
-        transform: translateY(-20px); /* Slight lift effect */
+        transform: translateY(-0px); /* Slight lift effect */
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
         cursor: pointer;
     }
@@ -666,6 +666,11 @@ hr{
     object-fit: contain;
 }
 
+.modalImageProducts {
+    height: 600px;
+    background-color: whitesmoke !important;
+    object-fit: contain;
+}
 /* Logo container styling */
 .logo-container {
     top: 5%; /* Adjust top position as needed */
@@ -916,7 +921,7 @@ milestone-container p {
 
 .modal-backdrop.show {
     backdrop-filter: blur(30px); /* High blur intensity */
-    background-color: rgba(0, 0, 0, 100); /* Slight dark overlay */
+    background-color: #201d1d !important;
 }
 
 .modal-dialog {
@@ -947,9 +952,165 @@ milestone-container p {
 .modal-content {
     border-radius: 10px; /* Add rounded corners for a clean look */
 }
-
 .project-scope {
     text-align: center;
     font-size: 3.5em;
     color: #03ae57;
 }
+
+@keyframes swoopIn {
+    0% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the modal */
+.modal.swoop-in .modal-dialog {
+    animation: swoopIn 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+/* Define the bounce down animation */
+@keyframes bounceDownIn {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(30%);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the modal */
+.modal.smooth-bounce-down-in .modal-dialog {
+    animation: smoothBounceDownIn 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes flipYIn {
+    0% {
+        transform: rotateY(-90deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotateY(-20deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the modal */
+.modal.flip-y-in .modal-dialog {
+    animation: flipYIn 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: top center; /* Ensures the modal flips from the top */
+}
+
+@keyframes bounceDownIn {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(20%);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(-10%);
+    }
+
+    90% {
+        transform: translateY(5%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the modal dialog */
+.modal.bounce-down-in .modal-dialog {
+    animation: smoothBounceDownIn 2s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: top center; /* Optional, for better visual perspective */
+}
+
+/* Spinner styling */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.2); /* Light border for contrast */
+    border-top: 5px solid #03ae57; /* Active spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade out the loader smoothly */
+#globalLoader.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none; /* Prevent interaction during fade-out */
+}
+
+    /* Hide the loader completely after the fade-out */
+    #globalLoader.hidden.hidden-completely {
+        display: none;
+    }
+
+
+/* Initial state of the navbar */
+.navbar.sticky-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    width: 100%;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* No shadow initially */
+    transition: box-shadow 0.3s ease, padding 0.3s ease, background-color 0.3s ease; /* Smooth transition for shadow and padding */
+    background-color: transparent; /* Start with a transparent background */
+    padding: 20px 0; /* Larger padding initially */
+}
+
+    /* Add styles when the user scrolls down (adding class 'scrolled') */
+    .navbar.sticky-top.scrolled {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow when scrolling */
+        background-color: rgba(255, 255, 255, 0.9); /* Background color when scrolling down */
+        padding: 10px 0; /* Slightly smaller padding when scrolling */
+    }
+
+/* Optional: Adjust content so it doesn't hide behind the navbar */
+body {
+    padding-top: 70px; /* Adjust this value to match the height of your navbar */
+}
+
+
+        

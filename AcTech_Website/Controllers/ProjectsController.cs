@@ -4,7 +4,7 @@ namespace Frank_Website.Controllers
 {
     public class ProjectsController : Controller
     {
-        public IActionResult ProjectDetails()
+        public IActionResult AcTechProjects()
         {
 
             string imagesFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/Projects_Images");
@@ -12,7 +12,7 @@ namespace Frank_Website.Controllers
                                   .Select(Path.GetFileName) 
                                   .ToList();
 
-            return View("Projects",images); 
+            return View(images); 
         }
     }
 }

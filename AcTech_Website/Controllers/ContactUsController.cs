@@ -12,7 +12,7 @@ namespace Frank_Website.Controllers
             _dataRepository = dataRepository;
         }
 
-        public async Task<IActionResult> Contact()
+        public async Task<IActionResult> AcTechInquiry()
         {
             return View();
         }

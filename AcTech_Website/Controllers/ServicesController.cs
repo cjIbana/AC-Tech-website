@@ -12,7 +12,7 @@ namespace Frank_Website.Controllers
             _dataRepository = dataRepository;
         }
 
-        public IActionResult Services()
+        public IActionResult AcTechServices()
         {
             string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "assets", "Products_Images");
 

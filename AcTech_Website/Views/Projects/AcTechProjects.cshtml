@@ -1,7 +1,7 @@
 ﻿@model List<string>
 
 @{
-    ViewData["Title"] = "PROJECTS";
+    ViewData["Title"] = "AcTech Projects";
 }
 
 <div class="container my-3 about-us-container">
@@ -578,6 +578,19 @@
                 const projectModal = new bootstrap.Modal(document.getElementById("projectModal"));
                 projectModal.show();
             });
+        });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("projectModal");
+
+        modal.addEventListener("show.bs.modal", () => {
+            modal.classList.add("bounce-down-in");
+        });
+
+        modal.addEventListener("hidden.bs.modal", () => {
+            modal.classList.remove("bounce-down-in");
         });
     });
 
