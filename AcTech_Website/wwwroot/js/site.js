@@ -37,15 +37,16 @@ function backToTop() {
     document.documentElement.scrollTop = 0;
 }
 
-document.addEventListener("contextmenu", function (event) {
-    event.preventDefault();
-});
+//document.addEventListener("contextmenu", function (event) {
+//    event.preventDefault();
+//});
 
-document.addEventListener("keydown", function (event) {
-    if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
-        event.preventDefault();
-    }
-});
+//document.addEventListener("keydown", function (event) {
+//    if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+//        event.preventDefault();
+//    }
+//});
+
 document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById("globalLoader");
     if (loader) {
@@ -94,4 +95,22 @@ window.addEventListener("scroll", function () {
     } else {
         navbar.classList.remove("scrolled");  // Remove the 'scrolled' class when at the top
     }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        },
+        { threshold: 0.3 } // Trigger animation when 30% of the section is visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
 });

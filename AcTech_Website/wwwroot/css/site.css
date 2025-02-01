@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -15,7 +15,7 @@ html {
 
 body {
     /*margin-bottom: 60px;*/
-    font-family: "Roboto Slab", serif !important;
+    font-family: "Lato", serif !important;
     font-optical-sizing: auto;
     font-style: normal;
 }
@@ -1111,6 +1111,66 @@ milestone-container p {
 body {
     padding-top: 70px; /* Adjust this value to match the height of your navbar */
 }
+
+/* Basic styles for the org chart */
+.org-chart-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .org-chart-table td {
+        padding: 20px;
+        border: 1px solid #ddd;
+        vertical-align: middle;
+    }
+
+
+tbody {
+    border-style: groove !important;
+    border-color: #192230 !important;
+    border-width: 0px !important;
+    box-shadow: 0 7px 4px rgba(0, 0, 0, 0.2);
+}
+.ceo-tr {
+    background-color: #03ae57 !important;
+}
+
+/* Equal width for each td */
+.equal-width {
+    width: 50%; /* Ensures each cell takes up half of the available space */
+}
+
+.center-box {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.position {
+    font-size: 1.5em !important;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .org-chart-table {
+        width: 100%;
+    }
+
+        .org-chart-table td {
+            padding: 10px;
+        }
+
+    /* On smaller screens, ensure the columns stack */
+    .equal-width {
+        width: 100%; /* Stack each column on small screens */
+    }
+}
+
 
 
         
